@@ -43,8 +43,6 @@ $emitter = new CorsResponseEmitter([
 $emitter->emit($response);
 ```
 
-#### Origin resolution
-
 The emitter applies the following resolution order on each request:
 
 | Scenario | `Access-Control-Allow-Origin` | `Access-Control-Allow-Credentials` | `Vary` |
