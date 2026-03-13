@@ -101,7 +101,8 @@ $request = $requestCreator->createServerRequestFromGlobals();
 // Handle the request and produce a response
 $response = $app->handle($request);
 
-// Emit the response with CORS/cache headers; use '*' for public APIs or explicit origins for credentialed access
+// Emit the response with CORS/cache headers; use '*' for public APIs
+// or explicit origins for credentialed access
 $emitter = new CorsResponseEmitter([
 	'https://app.example.com',
 	'https://admin.example.com',
