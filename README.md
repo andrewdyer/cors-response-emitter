@@ -33,10 +33,13 @@ $response = $app->handle($request);
 
 ### Add CORS and cache-control headers
 
-Before sending the response to the client, the HTTP response should include the appropriate CORS and cache-control headers. The `YourVendor\YourPackage\Http\CorsResponseEmitter` class decorates the response with these headers and then emits it.
+Before sending the response to the client, the HTTP response should include the appropriate CORS and cache-control headers. The `YourVendor\YourPackage\Http\CorsResponseEmitter` class validates the request `Origin` against an explicit allowlist, emits credentialed CORS headers only for allowed origins, and then emits the response.
 
 ```php
-$emitter = new CorsResponseEmitter();
+$emitter = new CorsResponseEmitter([
+	'https://app.example.com',
+	'https://admin.example.com',
+]);
 $emitter->emit($response);
 ```
 
@@ -65,7 +68,10 @@ $request = $requestCreator->createServerRequestFromGlobals();
 // Handle the request and produce a response
 $response = $app->handle($request);
 
-// Emit the response with CORS and cache-control headers applied
-$emitter = new CorsResponseEmitter();
+// Emit the response with CORS/cache headers and explicit origin validation
+$emitter = new CorsResponseEmitter([
+	'https://app.example.com',
+	'https://admin.example.com',
+]);
 $emitter->emit($response);
 ```

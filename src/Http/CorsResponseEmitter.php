@@ -16,6 +16,27 @@ use Slim\ResponseEmitter;
 class CorsResponseEmitter extends ResponseEmitter
 {
     /**
+     * Explicit allowlist of origins that may receive credentialed CORS responses.
+     *
+     * @var list<string>
+     */
+    private array $allowedOrigins;
+
+    /**
+     * @param list<string> $allowedOrigins Explicit allowlist of accepted request origins.
+     * @param int $responseChunkSize Maximum body chunk size emitted per iteration.
+     */
+    public function __construct(array $allowedOrigins = [], int $responseChunkSize = 4096)
+    {
+        $this->allowedOrigins = array_values(array_unique(array_filter(
+            array_map('trim', $allowedOrigins),
+            static fn (string $origin): bool => $origin !== ''
+        )));
+
+        parent::__construct($responseChunkSize);
+    }
+
+    /**
      * {@inheritDoc}
      *
      * Applies CORS/cache headers, clears any active output buffer, and emits the response.
@@ -34,10 +55,10 @@ class CorsResponseEmitter extends ResponseEmitter
     }
 
     /**
-     * Returns a new response instance with default CORS and no-cache headers.
+     * Returns a new response instance with validated CORS and no-cache headers.
      *
-     * The `Access-Control-Allow-Origin` value is derived from `$_SERVER['HTTP_ORIGIN']`
-     * when present, otherwise an empty origin is used.
+     * `Access-Control-Allow-Origin` and credentials headers are only emitted when
+     * the current request origin is present in the configured allowlist.
      *
      * @param ResponseInterface $response The response to decorate with headers.
      *
@@ -45,11 +66,7 @@ class CorsResponseEmitter extends ResponseEmitter
      */
     protected function applyHeaders(ResponseInterface $response): ResponseInterface
     {
-        $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
-
-        return $response
-            ->withHeader('Access-Control-Allow-Credentials', 'true')
-            ->withHeader('Access-Control-Allow-Origin', $origin)
+        $response = $response
             ->withHeader(
                 'Access-Control-Allow-Headers',
                 'X-Requested-With, Content-Type, Accept, Origin, Authorization'
@@ -58,5 +75,15 @@ class CorsResponseEmitter extends ResponseEmitter
             ->withHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0')
             ->withAddedHeader('Cache-Control', 'post-check=0, pre-check=0')
             ->withHeader('Pragma', 'no-cache');
+
+        $origin = $_SERVER['HTTP_ORIGIN'] ?? null;
+        if ($origin === null || !in_array($origin, $this->allowedOrigins, true)) {
+            return $response;
+        }
+
+        return $response
+            ->withHeader('Access-Control-Allow-Credentials', 'true')
+            ->withHeader('Access-Control-Allow-Origin', $origin)
+            ->withAddedHeader('Vary', 'Origin');
     }
 }
