@@ -37,19 +37,19 @@ Before sending the response to the client, the HTTP response should include the 
 
 ```php
 $emitter = new CorsResponseEmitter([
-	'https://app.example.com',
-	'https://admin.example.com',
+    'https://app.example.com',
+    'https://admin.example.com',
 ]);
 $emitter->emit($response);
 ```
 
 The emitter applies the following resolution order on each request:
 
-| Scenario | `Access-Control-Allow-Origin` | `Access-Control-Allow-Credentials` | `Vary` |
-|---|---|---|---|
-| Request origin matches an explicit allowlist entry | Reflected origin (e.g. `https://app.example.com`) | `true` | `Origin` |
-| `"*"` in allowlist, no explicit match | `*` | _(omitted)_ | _(omitted)_ |
-| Origin missing or not in allowlist | _(omitted)_ | _(omitted)_ | _(omitted)_ |
+| Scenario                                           | `Access-Control-Allow-Origin`                     | `Access-Control-Allow-Credentials` | `Vary`      |
+| -------------------------------------------------- | ------------------------------------------------- | ---------------------------------- | ----------- |
+| Request origin matches an explicit allowlist entry | Reflected origin (e.g. `https://app.example.com`) | `true`                             | `Origin`    |
+| `"*"` in allowlist, no explicit match              | `*`                                               | _(omitted)_                        | _(omitted)_ |
+| Origin missing or not in allowlist                 | _(omitted)_                                       | _(omitted)_                        | _(omitted)_ |
 
 > **Note:** The [CORS specification](https://fetch.spec.whatwg.org/#cors-protocol-and-credentials) forbids sending `Access-Control-Allow-Credentials: true` alongside `Access-Control-Allow-Origin: *`. When `"*"` is used, credentialed requests (those carrying cookies, HTTP authentication, or TLS client certificates) will be rejected by the browser. Use explicit origins for any endpoint that requires credentials.
 
@@ -68,8 +68,8 @@ Explicit origins and `"*"` may be combined. An exact match always takes preceden
 
 ```php
 $emitter = new CorsResponseEmitter([
-	'*',
-	'https://app.example.com', // receives credentialed response
+    '*',
+    'https://app.example.com', // receives credentialed response
 ]);
 $emitter->emit($response);
 ```
@@ -102,8 +102,8 @@ $response = $app->handle($request);
 // Emit the response with CORS/cache headers; use '*' for public APIs
 // or explicit origins for credentialed access
 $emitter = new CorsResponseEmitter([
-	'https://app.example.com',
-	'https://admin.example.com',
+    'https://app.example.com',
+    'https://admin.example.com',
 ]);
 $emitter->emit($response);
 ```
