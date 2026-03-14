@@ -2,6 +2,7 @@
   "name": "andrewdyer/slim-cors-response-emitter",
   "description": "A CORS-aware response emitter for Slim applications.",
   "type": "library",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "AndrewDyer\\Slim\\": "src/"
