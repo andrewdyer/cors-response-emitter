@@ -1,3 +1,21 @@
+# Slim CORS Response Emitter
+
+A configurable CORS response emitter for Slim applications.
+
+## ⚖️ License
+
+Licensed under the [MIT license](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
+
+## ✨ Introduction
+
+This library provides a dedicated HTTP response emitter for Slim applications that ensures consistent CORS and cache-control headers are applied before the response is sent to the client. It extends Slim’s default response emission behavior while introducing a simple, explicit allowlist for validating request origins, emitting credentialed CORS headers only when the incoming `Origin` matches an allowed entry and preventing cookies or authentication data from being exposed to untrusted domains. For public APIs, wildcard origins may also be configured to permit cross-origin access without credentials, allowing applications to centralize CORS response behavior in a single, predictable location.
+
+## 📥 Installation
+
+```bash
+composer require andrewdyer/slim-cors-response-emitter
+```
+
 ## 🚀 Getting Started
 
 These sections demonstrate how to initialize a Slim application and handle HTTP responses, including applying CORS and cache-control headers before sending the response to the client.
