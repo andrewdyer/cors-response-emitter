@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace YourVendor\YourPackage\Tests;
+namespace AndrewDyer\Slim\Tests;
 
+use AndrewDyer\Slim\CorsResponseEmitter;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Psr7\Factory\ResponseFactory;
-use YourVendor\YourPackage\CorsResponseEmitter;
 
 /**
  * Verifies CORS/cache headers are applied before response emission.
