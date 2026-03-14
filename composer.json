@@ -1,6 +1,6 @@
 {
   "name": "andrewdyer/slim-cors-response-emitter",
-  "description": "",
+  "description": "A CORS-aware response emitter for Slim applications.",
   "type": "library",
   "autoload": {
     "psr-4": {
