@@ -1,5 +1,5 @@
 {
-  "name": "your-vendor/your-package",
+  "name": "andrewdyer/slim-cors-response-emitter",
   "description": "",
   "type": "library",
   "autoload": {
