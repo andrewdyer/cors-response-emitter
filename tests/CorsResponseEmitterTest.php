@@ -57,9 +57,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures missing request origin omits origin-specific CORS headers.
+     * Ensures missing request origin omits origin-specific CORS headers.
      *
-        * @return void
+     * @return void
      */
     public function testEmitOmitsAllowOriginWhenRequestOriginMissing(): void
     {
@@ -79,9 +79,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures non-allowlisted origins do not receive credentialed CORS headers.
+     * Ensures non-allowlisted origins do not receive credentialed CORS headers.
      *
-        * @return void
+     * @return void
      */
     public function testEmitOmitsAllowOriginWhenRequestOriginIsNotAllowed(): void
     {
@@ -101,9 +101,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures stale buffered output is cleared before response emission.
+     * Ensures stale buffered output is cleared before response emission.
      *
-        * @return void
+     * @return void
      */
     public function testEmitClearsNonEmptyOutputBuffer(): void
     {
@@ -127,9 +127,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures emission succeeds with an active but empty output buffer.
+     * Ensures emission succeeds with an active but empty output buffer.
      *
-        * @return void
+     * @return void
      */
     public function testEmitHandlesEmptyOutputBuffer(): void
     {
@@ -151,9 +151,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures only the innermost buffer is cleared when nested buffers are active.
+     * Ensures only the innermost buffer is cleared when nested buffers are active.
      *
-        * @return void
+     * @return void
      */
     public function testEmitClearsCurrentBufferWithoutAffectingOuterBuffer(): void
     {
@@ -186,9 +186,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures any trusted origin in a multi-origin allowlist is accepted.
+     * Ensures any trusted origin in a multi-origin allowlist is accepted.
      *
-        * @return void
+     * @return void
      */
     public function testEmitAddsCorsHeadersForMultipleAllowedOrigins(): void
     {
@@ -213,9 +213,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures an empty allowlist never emits credentialed CORS headers.
+     * Ensures an empty allowlist never emits credentialed CORS headers.
      *
-        * @return void
+     * @return void
      */
     public function testEmitWithEmptyAllowlistOmitsCorsCredentials(): void
     {
@@ -234,9 +234,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures wildcard allowlists emit `Access-Control-Allow-Origin: *` without credentials.
+     * Ensures wildcard allowlists emit `Access-Control-Allow-Origin: *` without credentials.
      *
-        * @return void
+     * @return void
      */
     public function testEmitWithWildcardAllowlistSetsWildcardOriginWithoutCredentials(): void
     {
@@ -255,9 +255,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures wildcard allowlists emit a wildcard origin without request-origin input.
+     * Ensures wildcard allowlists emit a wildcard origin without request-origin input.
      *
-        * @return void
+     * @return void
      */
     public function testEmitWithWildcardAllowlistSetsWildcardOriginWhenRequestOriginMissing(): void
     {
@@ -276,9 +276,9 @@ final class CorsResponseEmitterTest extends TestCase
     }
 
     /**
-        * Ensures explicit origin matches take precedence over wildcard allowlist entries.
+     * Ensures explicit origin matches take precedence over wildcard allowlist entries.
      *
-        * @return void
+     * @return void
      */
     public function testEmitPrefersExplicitOriginOverWildcard(): void
     {
