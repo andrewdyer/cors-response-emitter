@@ -1,6 +1,7 @@
 {
   "name": "andrewdyer/slim-cors-response-emitter",
   "description": "A CORS-aware response emitter for Slim applications.",
+  "keywords": ["php", "slim", "cors", "http", "psr-7", "middleware"],
   "type": "library",
   "license": "MIT",
   "autoload": {
