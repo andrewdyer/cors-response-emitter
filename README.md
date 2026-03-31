@@ -6,13 +6,16 @@ A CORS-aware response emitter for Slim PHP applications, designed to ensure cons
 
 This library emits HTTP responses with consistent CORS and cache-control headers. It validates the incoming `Origin` against an explicit allowlist and emits credentialed CORS headers only for trusted origins. For public APIs, wildcard origins may be used to allow cross-origin access without credentials.
 
+## Prerequisites
+
+- **[PHP](https://www.php.net/)**: Version 8.3 or higher is required.
+- **[Composer](https://getcomposer.org/)**: Dependency management tool for PHP.
+
 ## Installation
 
 ```bash
 composer require andrewdyer/slim-cors-response-emitter
 ```
-
-Requires PHP 8.3 or newer.
 
 ## Getting Started
 
