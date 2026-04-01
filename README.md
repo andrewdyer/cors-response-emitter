@@ -1,5 +1,12 @@
 ![Slim CORS Response Emitter](https://public-assets.andrewdyer.rocks/images/covers/slim-cors-response-emitter.png)
 
+<p align="center">
+  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/v/stable?style=for-the-badge" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/downloads?style=for-the-badge" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/license?style=for-the-badge" alt="License"></a>
+  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/require/php?style=for-the-badge" alt="PHP Version Required"></a>
+</p>
+
 # Slim CORS Response Emitter
 
 A CORS-aware response emitter for Slim PHP applications, designed to ensure consistent and secure HTTP responses.
