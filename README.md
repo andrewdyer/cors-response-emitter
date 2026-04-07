@@ -1,32 +1,33 @@
-![Slim CORS Response Emitter](https://public-assets.andrewdyer.rocks/images/covers/slim-cors-response-emitter.png)
+![CORS Response Emitter](https://public-assets.andrewdyer.rocks/images/covers/cors-response-emitter.png)
 
 <p align="center">
-  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/v/stable?style=for-the-badge" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/downloads?style=for-the-badge" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/license?style=for-the-badge" alt="License"></a>
-  <a href="https://packagist.org/packages/andrewdyer/slim-cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/slim-cors-response-emitter/require/php?style=for-the-badge" alt="PHP Version Required"></a>
+  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/v/stable?style=for-the-badge" alt="Latest Stable Version"></a>
+  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/downloads?style=for-the-badge" alt="Total Downloads"></a>
+  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/license?style=for-the-badge" alt="License"></a>
+  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/require/php?style=for-the-badge" alt="PHP Version Required"></a>
 </p>
 
-# Slim CORS Response Emitter
+# CORS Response Emitter
 
-A CORS-aware response emitter for Slim PHP applications, designed to ensure consistent and secure HTTP responses.
+A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com/) applications, designed to ensure consistent and secure HTTP responses.
 
-## ✨ Introduction
+## Introduction
 
 This library emits HTTP responses with consistent CORS and cache-control headers. It validates the incoming `Origin` against an explicit allowlist and emits credentialed CORS headers only for trusted origins. For public APIs, wildcard origins may be used to allow cross-origin access without credentials.
 
-## 📋 Prerequisites
+## Prerequisites
 
 - **[PHP](https://www.php.net/)**: Version 8.3 or higher is required.
 - **[Composer](https://getcomposer.org/)**: Dependency management tool for PHP.
+- **[Slim Framework](https://www.slimframework.com/)**: Version 4 is required.
 
-## 📥 Installation
+## Installation
 
 ```bash
 composer require andrewdyer/cors-response-emitter
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 The examples below demonstrate how to configure the emitter and emit a Slim response with CORS headers.
 
@@ -102,7 +103,7 @@ $emitter->emit($response);
 
 Important: the [CORS specification](https://fetch.spec.whatwg.org/#cors-protocol-and-credentials) forbids sending `Access-Control-Allow-Credentials: true` with `Access-Control-Allow-Origin: *`. If an endpoint requires cookies, HTTP authentication, or client certificates, use explicit origins.
 
-## 🧩 Complete Example
+## Complete Example
 
 The following example combines Slim setup, request handling, and CORS-aware response emission:
 
@@ -135,6 +136,6 @@ $emitter = new CorsResponseEmitter([
 $emitter->emit($response);
 ```
 
-## ⚖️ License
+## License
 
 Licensed under the [MIT license](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
