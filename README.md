@@ -52,7 +52,7 @@ After Slim handles the request, pass the response to the emitter.
 $emitter->emit($response);
 ```
 
-## 📚 Usage
+## Usage
 
 The emitter resolves CORS headers from the request origin and allowlist configuration:
 
