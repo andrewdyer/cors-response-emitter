@@ -4,6 +4,18 @@
   "keywords": ["php", "slim", "cors", "http", "psr-7", "middleware"],
   "type": "library",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrew Dyer",
+      "homepage": "https://andrewdyer.rocks",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/andrewdyer/cors-response-emitter",
+  "support": {
+    "issues": "https://github.com/andrewdyer/cors-response-emitter/issues",
+    "source": "https://github.com/andrewdyer/cors-response-emitter"
+  },
   "autoload": {
     "psr-4": {
       "AndrewDyer\\CorsResponseEmitter\\": "src/"
