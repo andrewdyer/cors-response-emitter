@@ -1,15 +1,11 @@
-![CORS Response Emitter](https://public-assets.andrewdyer.rocks/images/covers/cors-response-emitter.png)
-
-<p align="center">
-  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/v/stable?style=for-the-badge" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/downloads?style=for-the-badge" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/license?style=for-the-badge" alt="License"></a>
-  <a href="https://packagist.org/packages/andrewdyer/cors-response-emitter"><img src="https://poser.pugx.org/andrewdyer/cors-response-emitter/require/php?style=for-the-badge" alt="PHP Version Required"></a>
-</p>
-
 # CORS Response Emitter
 
 A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com/) applications, designed to ensure consistent and secure HTTP responses.
+
+[![Latest Stable Version](http://poser.pugx.org/andrewdyer/cors-response-emitter/v?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)
+[![Total Downloads](http://poser.pugx.org/andrewdyer/cors-response-emitter/downloads?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)
+[![License](http://poser.pugx.org/andrewdyer/cors-response-emitter/license?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)
+[![PHP Version Require](http://poser.pugx.org/andrewdyer/cors-response-emitter/require/php?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)
 
 ## Introduction
 
