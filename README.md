@@ -9,7 +9,7 @@ A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com
 
 ## Introduction
 
-This library applies CORS and cache-control headers when emitting Slim responses. It validates the incoming `Origin` (`$_SERVER['HTTP_ORIGIN']`) against an explicit allowlist, returns credentialed CORS headers for trusted origins, and supports wildcard (`*`) responses for public APIs without credentials. Cache-control headers are applied consistently across emitted responses.
+This library applies CORS and cache-control headers when emitting Slim responses. It checks the incoming request origin against an explicit allowlist, returns credentialed CORS responses for trusted origins, and supports wildcard responses for public APIs without credentials. Cache-control headers are applied consistently across emitted responses.
 
 ## Prerequisites
 
