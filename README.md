@@ -1,6 +1,6 @@
 # CORS Response Emitter
 
-A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com/) applications, designed to apply predictable CORS and cache-control headers to emitted HTTP responses.
+A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com/) applications that applies consistent CORS and cache-control headers.
 
 [![Latest Stable Version](http://poser.pugx.org/andrewdyer/cors-response-emitter/v?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)
 [![Total Downloads](http://poser.pugx.org/andrewdyer/cors-response-emitter/downloads?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)

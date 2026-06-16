@@ -1,6 +1,6 @@
 {
   "name": "andrewdyer/cors-response-emitter",
-  "description": "A CORS-aware response emitter for Slim Framework applications, designed to apply predictable CORS and cache-control headers to emitted HTTP responses",
+  "description": "A CORS-aware response emitter for Slim Framework applications that applies consistent CORS and cache-control headers",
   "keywords": ["php", "slim", "cors", "http", "psr-7", "middleware"],
   "type": "library",
   "license": "MIT",
