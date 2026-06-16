@@ -1,6 +1,6 @@
 # CORS Response Emitter
 
-A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com/) applications, designed to ensure consistent and secure HTTP responses.
+A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com/) applications, designed to apply predictable CORS and cache-control headers to emitted HTTP responses.
 
 [![Latest Stable Version](http://poser.pugx.org/andrewdyer/cors-response-emitter/v?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)
 [![Total Downloads](http://poser.pugx.org/andrewdyer/cors-response-emitter/downloads?style=flat-square)](https://packagist.org/packages/andrewdyer/cors-response-emitter)
@@ -9,7 +9,7 @@ A CORS-aware response emitter for [Slim Framework](https://www.slimframework.com
 
 ## Introduction
 
-This library emits HTTP responses with consistent CORS and cache-control headers. It validates the incoming `Origin` against an explicit allowlist and emits credentialed CORS headers only for trusted origins. For public APIs, wildcard origins may be used to allow cross-origin access without credentials.
+This library applies CORS and cache-control headers when emitting Slim responses. It validates the incoming `Origin` (`$_SERVER['HTTP_ORIGIN']`) against an explicit allowlist, returns credentialed CORS headers for trusted origins, and supports wildcard (`*`) responses for public APIs without credentials. Cache-control headers are applied consistently across emitted responses.
 
 ## Prerequisites
 
